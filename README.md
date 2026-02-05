@@ -57,11 +57,15 @@ All previously created OSM-based layers are registered here.
 
 ### 1️⃣ Import Libraries & Create Database Connection
 - Loads required Python libraries
+
+---
+
+### 2️⃣ Import Libraries & Create Database Connection
 - Establishes a PostgreSQL connection via a shared helper function
 
 ---
 
-### 2️⃣ Normalize OSM Tags (`normalize_osm_tags`)
+### 3️⃣ Normalize OSM Tags (`normalize_osm_tags`)
 **Purpose:**  
 Convert raw and inconsistent OSM tag data into a clean format compatible with OSMnx.
 
@@ -79,7 +83,7 @@ Outputs a normalized tag structure ready for filtering OSM data.
 
 ---
 
-### 3️⃣ Fetch Layer Configurations
+### 4️⃣ Fetch Layer Configurations
 
 Reads layer metadata from `berlin_unified.berlin_layers_final_tables`.
 
@@ -97,7 +101,7 @@ A list of layer configs used to dynamically drive the pipeline.
 
 ---
 
-### 4️⃣ Create Layer Tables
+### 5️⃣ Create Layer Tables
 
 For each configured layer, the pipeline:
 
@@ -120,7 +124,7 @@ Commits all changes and closes the database connection.
 
 ---
 
-### 5️⃣ Load OSM Data into Each Table
+### 6️⃣ Load OSM Data into Each Table
 
 For each layer, the pipeline:
 
@@ -149,7 +153,7 @@ For each layer, the pipeline:
 
 ---
 
-### 6️⃣ Run All Layer Loads
+### 7️⃣ Run All Layer Loads
 
 - Iterates over every layer configuration
 - Normalizes OSM tags
